@@ -30,8 +30,8 @@ const convertToHLS = (rtspUrl, outputPath) => {
 };
 
 // RTSP Stream URLs
-const rtspStream1 = 'rtsp://192.168.100.33/live/ch00_0';
-const rtspStream2 = 'rtsp://192.168.100.32/live/ch00_0';
+const rtspStream1 = 'EDITME';
+const rtspStream2 = 'EDITME';
 
 // Ensure the directories exist
 if (!fs.existsSync('./public/videos')) {
