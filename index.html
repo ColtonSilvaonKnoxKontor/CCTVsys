@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Insigne's Private Surveillance Camera System</title>
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f9;
+      text-align: center;
+      padding: 20px;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    h1, h2 {
+      color: #333;
+    }
+    p {
+      margin-left: 5vw;
+      margin-right: 5vw;
+      line-height: 1.6;
+      font-size: 1.2em;
+    }
+    p.justified {
+      text-align: justify;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #333;
+      color: white;
+      margin-top: auto;
+      width: 100%;
+      font-size: 14px;
+    }
+    a {
+      text-decoration: none;
+    }
+    .yellow-link {
+      color: yellow;
+    }
+    .cyan-link {
+      color: cyan;
+    }
+    .blue-link {
+      color: blue;
+    }
+    .video-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 20px 0;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    video {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+    .controls {
+      margin: 20px 0;
+    }
+    button {
+      background-color: #4CAF50;
+      color: white;
+      font-size: 16px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin: 10px;
+      transition: background-color 0.3s;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    .info-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+      justify-items: center;
+      align-items: center;
+      margin: 20px 0;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .info-item {
+      padding: 10px;
+      margin: 5px;
+      background-color: #f0f0f0;
+      border-radius: 5px;
+      width: 90%;
+      text-align: left;
+    }
+    .info-item h2 {
+      font-size: 16px;
+      color: #333;
+      margin-bottom: 5px;
+    }
+    .info-item p {
+      font-size: 14px;
+      color: #666;
+    }
+    @media screen and (max-width: 768px) {
+      .info-container {
+        grid-template-columns: 1fr;
+      }
+      p {
+        font-size: 1em;
+      }
+      button {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Surveillance CAMERA SYSTEM | PRIVATE ONLY USE</h1>
+  <h2>Insigne's Residence</h2>
+
+  <p class="justified">This is a live feed of a Surveillance CAMERA SYSTEM, which supports Recorded Footage (Playback) feature. As for now, the download option is unavailable because of implementation difficulty. This is not a case for stock browser app in Android (usually named Internet) as you can download fetched footage in .mp4 format.</p>
+
+  <!-- Buttons to switch between cameras -->
+  <div class="controls">
+    <button id="camera1Btn">Show Camera 1</button>
+    <button id="camera2Btn">Show Camera 2</button>
+      <button id="changelogBtn">Changelog</button>
+
+  </div>
+
+  <!-- Video container -->
+  <div class="video-container">
+    <video id="video1" controls autoplay style="display: none;"></video>
+    <video id="video2" controls autoplay style="display: none;"></video>
+     <div id="changelogContainer" style="display: none;">
+      <!-- Changelog content will be dynamically inserted -->
+    </div>
+  </div>
+
+
+  <h1>Security Concerns: MUST READ</h1>
+ <p class="justified">The webpage is hosted from the home's system unit, which operates 24/7 and is accessible on the internet. Although this webpage is not indexed by search engine bots like Google, Baidu (China), Yandex (Russia), Bing (Microsoft), Yahoo, Yahoo Japan, or DuckDuckGo, anyone with the link can still access it directly. To ensure privacy, ensure the link is kept private and shared only with trusted family members, as unauthorized individuals who obtain the link could view the footage without permission.</p>
+   <p class="justified">The Surveillance CAMERA system is still in testing stage and it is subjected for further adjustment for motion and PTZ, and other configurations to improve the camera itself and streaming quality. Also this server is unstable as the webpage might not load for unexpected issues. </p>
+
+  <!-- System Information -->
+  <h1>Deployed System Information</h1>
+  <div class="info-container">
+    <div class="info-item">
+      <h2>OS with (Kernel)</h2>
+      <p>Ubuntu 24.04 noble LTS with (x86_64 Linux 6.8.0-51-generic)</p>
+    </div>
+    <div class="info-item">
+      <h2>System Unit</h2>
+      <p>Hewlett-Packard HP Compaq 8200 Elite CMT PC (Workstation type)</p>
+    </div>
+    <div class="info-item">
+      <h2>CCTV System Information</h2>
+      <p>RTSP Stream into HLS (HTTP Live Streaming) using ffmpeg and HLS.js</p>
+    </div>
+    <div class="info-item">
+      <h2>CPU</h2>
+      <p>Intel Core i3-2100 @ 4x (2 cores 4 Threads) 3.1GHz</p>
+    </div>
+    <div class="info-item">
+      <h2>Memory</h2>
+      <p>8 GB</p>
+    </div>
+    <div class="info-item">
+      <h2>Storage Used</h2>
+      <p>64 GB USB flash (for faster I/O speed than traditional HDD)</p>
+    </div>
+  </div>
+  
+  <h1>Public File Storage</h1>
+<p class="justified">You may access this public storage for uploading or downloading files through this <a href="https://silvasystems.serveo.net/" class="blue-link">local server</a>.</p><br />
+
+  <footer>Created 2025 by COLTON SILVA (西沢信長)<br />
+  Powered by Free and Open Source Software (FOSS)<br />
+  This is made possible with <a href="https://serveo.net/" class="yellow-link">Serveo</a> and <a href="https://localtunnel.github.io/www/" class="yellow-link">localtunnel</a> to expose intranet (local network) into internet<br /><br /> 
+  If you encounter issues with this webpage, message <a href="https://www.facebook.com/NishizawaNobunacchi" class="cyan-link">ADMIN</a></footer>
+
+  <script>
+  
+   // Fetch and load changelog content dynamically when changelog button is clicked
+    document.getElementById('changelogBtn').addEventListener('click', function() {
+      fetch('changelog.html')
+        .then(response => response.text())
+        .then(data => {
+          // Insert the changelog content into the container
+          const changelogContainer = document.getElementById('changelogContainer');
+          changelogContainer.innerHTML = data;
+          changelogContainer.style.display = 'block'; // Show the changelog
+          
+          // Hide video elements when changelog is shown
+          document.getElementById('video1').style.display = 'none';
+          document.getElementById('video2').style.display = 'none';
+        })
+        .catch(error => {
+          console.error('Error loading changelog:', error);
+        });
+    }); // END
+  
+ fetch('https://cctvsilvasystems.loca.lt/', {
+    headers: {
+        'bypass-tunnel-reminder': 'true'
+    }
+}).then(response => response.text())
+  .then(data => console.log(data));
+  
+    if (Hls.isSupported()) {
+      var video1 = document.getElementById('video1');
+      var hls1 = new Hls();
+      hls1.loadSource('videos/camera1/playlist.m3u8');
+      hls1.attachMedia(video1);
+
+      var video2 = document.getElementById('video2');
+      var hls2 = new Hls();
+      hls2.loadSource('videos/camera2/playlist.m3u8');
+      hls2.attachMedia(video2);
+    }
+
+     document.getElementById('camera1Btn').addEventListener('click', function() {
+        // Hide changelog and show Camera 1
+        document.getElementById('changelogContainer').style.display = 'none';
+        video1.style.display = 'block';
+        video2.style.display = 'none';
+    });
+
+    document.getElementById('camera2Btn').addEventListener('click', function() {
+        // Hide changelog and show Camera 2
+        document.getElementById('changelogContainer').style.display = 'none';
+        video2.style.display = 'block';
+        video1.style.display = 'none';
+    });
+
+    video1.style.display = 'block';
+    video2.style.display = 'none';
+  </script>
+
+</body>
+</html>
+
