@@ -15,10 +15,9 @@ I recommend any Linux distributions although any NT (Windows), Be and UNIX-like 
 # Source Configuration
 You need to configure apps.js to specify address located at `const rtspStream1 = 'EDITME';` 
 
-Change EDITME into something like this: rtsp://192.168.1.1/blah/blah.
+Change EDITME into something like this: rtsp://192.168.1.1/blah/blah. You may add or modify ffmpeg options to suit your needs. It is located at line 16.
 
-You may add or modify ffmpeg options to suit your needs. It is located at line 16.
-
+You should change the html contents but not the scripts.
 # How to run the server?
 Do `node app.js` and open the link provided. It usually http://localhost:3000
 
